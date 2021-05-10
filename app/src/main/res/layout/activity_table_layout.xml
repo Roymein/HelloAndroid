@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/table_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".activity.TableLayoutActivity">
+
+    <TableRow>
+        <TextView
+            android:text="user name"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"/>
+
+        <EditText
+            android:layout_width="@dimen/et_table_layout_width"
+            android:hint="输入用户名"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/text_size"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="password"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"/>
+
+        <EditText
+            android:layout_width="@dimen/et_table_layout_width"
+            android:hint="输入密码"
+            android:inputType="numberPassword"
+            android:textSize="@dimen/text_size"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="confirm password"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"/>
+
+        <EditText
+            android:hint="再次确认密码"
+            android:textSize="@dimen/text_size"
+            android:layout_width="@dimen/et_table_layout_width"
+            android:inputType="numberPassword"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="phone number"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"/>
+
+        <EditText
+            android:hint="input phone number"
+            android:textSize="@dimen/text_size"
+            android:layout_width="@dimen/et_table_layout_width"
+            android:inputType="number"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="email"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"/>
+
+        <EditText
+            android:hint="input email"
+            android:textSize="@dimen/text_size"
+            android:layout_width="@dimen/et_table_layout_width"
+            android:inputType="textEmailAddress"/>
+
+    </TableRow>
+
+</TableLayout>
