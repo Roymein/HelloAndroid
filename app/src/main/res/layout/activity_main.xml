@@ -43,6 +43,12 @@
                 android:text="GridLayout 创建计算器按键布局"
                 android:onClick="onClickGridLayout"/>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="RelativeLayout 布局"
+                android:onClick="onClickRelativeLayout"/>
         </LinearLayout>
 
         <LinearLayout
@@ -53,7 +59,6 @@
 
 
         </LinearLayout>
-
 
     </LinearLayout>
 

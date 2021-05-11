@@ -32,4 +32,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, GridLayoutActivity.class);
         startActivity(intent);
     }
+
+    public void onClickRelativeLayout(View view) {
+
+    }
 }
