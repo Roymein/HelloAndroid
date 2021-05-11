@@ -39,7 +39,9 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false"
+                android:text="GridLayout 创建计算器按键布局"
+                android:onClick="onClickGridLayout"/>
 
         </LinearLayout>
 

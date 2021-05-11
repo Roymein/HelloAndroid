@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.demo.android.activity.GridLayoutActivity;
 import com.demo.android.activity.TableLayoutActivity;
 import com.demo.android.activity.TextInputLayoutActivity;
 
@@ -24,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickEditManagedByTextInputLayout(View view) {
         Intent intent = new Intent(this, TextInputLayoutActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickGridLayout(View view) {
+        Intent intent = new Intent(this, GridLayoutActivity.class);
         startActivity(intent);
     }
 }

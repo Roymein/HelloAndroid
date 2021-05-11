@@ -6,4 +6,6 @@
     <string name="text_input_layout_password_hint">请输入用户密码</string>
     <string name="text_input_layout_password_empty_hint">密码不能为空白</string>
     <string name="btn_login">登录</string>
+
+    <string name="btn_clear">清除</string>
 </resources>

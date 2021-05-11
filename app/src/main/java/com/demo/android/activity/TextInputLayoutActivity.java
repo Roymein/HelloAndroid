@@ -9,6 +9,9 @@ import com.demo.android.R;
 import com.demo.lib.activity.BaseActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
+/**
+ * 作为 EditText 的容器，为 EditText 生成浮动的 label。
+ */
 public class TextInputLayoutActivity extends BaseActivity {
     public static final String TAG = "TextInputLayoutActivity";
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/gl_calculator"
+    android:columnCount="4"
+    android:rowCount="6"
+    tools:context=".activity.GridLayoutActivity">
+
+    <!--        layout_columnSpan  表示占据4列-->
+    <AutoCompleteTextView
+        android:id="@+id/tv_calculate_result"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_columnSpan="4"
+        android:layout_marginLeft="2pt"
+        android:layout_marginRight="2pt"
+        android:background="#fff"
+        android:editable="false"
+        android:padding="3pt"
+        android:textColor="#000"
+        android:textSize="@dimen/text_size" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_columnSpan="4"
+        android:layout_marginLeft="2pt"
+        android:layout_marginRight="2pt"
+        android:background="#fff"
+        android:padding="3pt"
+        android:text="@string/btn_clear"
+        android:textAllCaps="false"
+        android:textSize="@dimen/text_size" />
+
+
+
+</GridLayout>
