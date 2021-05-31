@@ -49,6 +49,13 @@
                 android:textAllCaps="false"
                 android:text="RelativeLayout 布局"
                 android:onClick="onClickRelativeLayout"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Menu activity"
+                android:onClick="onClickMenuActivity"/>
         </LinearLayout>
 
         <LinearLayout

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.demo.android.activity.GridLayoutActivity;
+import com.demo.android.activity.MenuActivity;
+import com.demo.android.activity.RelativeLayoutActivity;
 import com.demo.android.activity.TableLayoutActivity;
 import com.demo.android.activity.TextInputLayoutActivity;
 
@@ -34,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickRelativeLayout(View view) {
+        Intent intent = new Intent(this, RelativeLayoutActivity.class);
+        startActivity(intent);
+    }
 
+    public void onClickMenuActivity(View view) {
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
     }
 }

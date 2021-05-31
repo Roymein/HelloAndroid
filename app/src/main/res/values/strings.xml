@@ -8,4 +8,10 @@
     <string name="btn_login">登录</string>
 
     <string name="btn_clear">清除</string>
+    <string name="add_item">add</string>
+    <string name="remove_item">remove</string>
+    <string name="insert">insert</string>
+    <string name="query">query</string>
+
+    <string name="menu_activity_label">Menu activity</string>
 </resources>
