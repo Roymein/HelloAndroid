@@ -50,12 +50,35 @@
                 android:text="RelativeLayout 布局"
                 android:onClick="onClickRelativeLayout"/>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:text="Menu activity"
                 android:onClick="onClickMenuActivity"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="View activity"
+                android:onClick="onClickViewActivity"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="ListView activity"
+                android:onClick="onClickListViewActivity"/>
+
         </LinearLayout>
 
         <LinearLayout

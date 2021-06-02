@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.demo.android.activity.GridLayoutActivity;
+import com.demo.android.activity.ListViewActivity;
 import com.demo.android.activity.MenuActivity;
 import com.demo.android.activity.RelativeLayoutActivity;
 import com.demo.android.activity.TableLayoutActivity;
 import com.demo.android.activity.TextInputLayoutActivity;
+import com.demo.android.activity.ViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,28 +22,36 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onClickTableLayout(View view) {
-        Intent intent = new Intent(this, TableLayoutActivity.class);
+    private void startActivity(Class<?> clazz) {
+        Intent intent = new Intent(this, clazz);
         startActivity(intent);
+    }
+
+    public void onClickTableLayout(View view) {
+        startActivity(TableLayoutActivity.class);
     }
 
     public void onClickEditManagedByTextInputLayout(View view) {
-        Intent intent = new Intent(this, TextInputLayoutActivity.class);
-        startActivity(intent);
+        startActivity(TextInputLayoutActivity.class);
     }
 
     public void onClickGridLayout(View view) {
-        Intent intent = new Intent(this, GridLayoutActivity.class);
-        startActivity(intent);
+        startActivity(GridLayoutActivity.class);
     }
 
     public void onClickRelativeLayout(View view) {
-        Intent intent = new Intent(this, RelativeLayoutActivity.class);
-        startActivity(intent);
+        startActivity(RelativeLayoutActivity.class);
     }
 
     public void onClickMenuActivity(View view) {
-        Intent intent = new Intent(this, MenuActivity.class);
-        startActivity(intent);
+        startActivity(MenuActivity.class);
+    }
+
+    public void onClickViewActivity(View view) {
+        startActivity(ViewActivity.class);
+    }
+
+    public void onClickListViewActivity(View view) {
+        startActivity(ListViewActivity.class);
     }
 }
