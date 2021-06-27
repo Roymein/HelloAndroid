@@ -87,9 +87,31 @@
             android:orientation="vertical"
             android:padding="10dp">
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Dynamic Receiver activity"
+                android:onClick="onClickLDynamicReceiver"/>
 
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Anim activity"
+                android:onClick="onClickLAnim"/>
         </LinearLayout>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+        </LinearLayout>
     </LinearLayout>
 
 
