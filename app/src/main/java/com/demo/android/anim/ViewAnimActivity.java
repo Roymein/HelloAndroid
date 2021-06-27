@@ -100,20 +100,20 @@ public class ViewAnimActivity extends AppCompatActivity {
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-                Log.e(TAG, "onAnimationStart: "+animation.getDuration() );
+                Log.e(TAG, "onAnimationStart: " + animation.getDuration());
             }
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                Log.e(TAG, "onAnimationEnd: "+animation.getDuration() );
+                Log.e(TAG, "onAnimationEnd: " + animation.getDuration());
             }
 
             @Override
             public void onAnimationRepeat(Animation animation) {
-                Log.e(TAG, "onAnimationRepeat: "+animation.getDuration() );
+                Log.e(TAG, "onAnimationRepeat: " + animation.getDuration());
             }
         });
         view.startAnimation(animation);
-        
+
     }
 }

@@ -1,4 +1,4 @@
-package com.demo.android.anim;
+package com.demo.android.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
