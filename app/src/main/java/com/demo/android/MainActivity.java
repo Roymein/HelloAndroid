@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.demo.android.activity.AnimActivity;
 import com.demo.android.activity.DynamicReceiverActivity;
 import com.demo.android.activity.GridLayoutActivity;
 import com.demo.android.activity.ListViewActivity;
@@ -13,6 +14,7 @@ import com.demo.android.activity.MenuActivity;
 import com.demo.android.activity.RelativeLayoutActivity;
 import com.demo.android.activity.TableLayoutActivity;
 import com.demo.android.activity.TextInputLayoutActivity;
+import com.demo.android.activity.ThressDActivity;
 import com.demo.android.activity.ViewActivity;
 import com.demo.android.anim.ViewAnimActivity;
 
@@ -63,5 +65,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickLAnim(View view) {
         startActivity(ViewAnimActivity.class);
+    }
+
+    public void onClick3D(View view) {
+        startActivity(ThressDActivity.class);
+    }
+
+    public void onClickAnim(View view) {
+        startActivity(AnimActivity.class);
     }
 }

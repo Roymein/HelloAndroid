@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloAndroid">
-        <activity android:name=".anim.CustomizeAnimActivity"></activity>
+        <activity android:name=".activity.AnimActivity"></activity>
+        <activity android:name=".activity.ThressDActivity" />
+        <activity android:name=".anim.CustomizeAnimActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".activity.DynamicReceiverActivity" />
         <activity android:name=".activity.RecycleViewActivity" />

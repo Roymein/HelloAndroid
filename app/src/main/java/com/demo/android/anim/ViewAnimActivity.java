@@ -2,12 +2,15 @@ package com.demo.android.anim;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.PathInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
@@ -32,8 +35,12 @@ public class ViewAnimActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_anim);
         mTvShowMode = findViewById(R.id.tv_set_mode);
+        mTvShowMode.setOnClickListener(v -> {
+
+        });
     }
 
     public void oncClickSet(View view) {
