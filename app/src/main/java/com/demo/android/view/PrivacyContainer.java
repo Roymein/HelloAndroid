@@ -4,19 +4,12 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.ArcShape;
-import android.graphics.drawable.shapes.OvalShape;
 import android.graphics.drawable.shapes.RoundRectShape;
-import android.media.Image;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +17,6 @@ import android.view.animation.PathInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -117,33 +109,41 @@ public class PrivacyContainer extends FrameLayout {
         viewGroup.addView(mLikeIcon, layoutParams);
         viewGroup.addView(mPlayIcon, layoutParams);
 
-        viewGroup.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                List<Animator> animators = new ArrayList<>();
-                animators.add(createWidthObjAnimator(mLikeIcon, SCALE_X, iconSize / 2, 0, true));
-                animators.add(createHeightObjAnimator(mLikeIcon, SCALE_Y, iconSize / 2, 0, true));
-                animators.add(createBgColorAnimator(viewGroup, COLOR, bgColor,locationColor));
+        viewGroup.setOnClickListener(v -> {
+            List<Animator> animators = new ArrayList<>();
+            animators.add(createWidthObjAnimator(mLikeIcon, SCALE_X, iconSize / 2, 0, true));
+            animators.add(createHeightObjAnimator(mLikeIcon, SCALE_Y, iconSize / 2, 0, true));
+            animators.add(createBgColorAnimator(viewGroup, COLOR, bgColor, locationColor));
 
-                AnimatorSet animatorSet = new AnimatorSet();
-                animatorSet.playTogether(animators);
-                animatorSet.addListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationStart(Animator animation) {
-                        Log.e(TAG, "onAnimationStart");
-//                        viewGroup.setBackground(createBgDrawable(locationColor));
-                    }
+            AnimatorSet animatorSet = new AnimatorSet();
+            animatorSet.playTogether(animators);
+            animatorSet.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+                    Log.e(TAG, "onAnimationStart");
+                }
 
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        mLikeIcon.setVisibility(GONE);
-                        Log.e(TAG, "onAnimationEnd");
-                    }
-                });
-                animatorSet.start();
-            }
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    mLikeIcon.setVisibility(GONE);
+                    resetViewStatus(mLikeIcon);
+                    Log.e(TAG, "onAnimationEnd: mLikeIcon.width: " + mLikeIcon.getLayoutParams().width + " height: " +
+                            mLikeIcon.getLayoutParams().height);
+                }
+            });
+            animatorSet.start();
         });
 
+    }
+
+    private void resetViewStatus(View view) {
+        view.setScaleX(1F);
+        view.setScaleY(1F);
+        view.setAlpha(1F);
+        view.setTranslationX(0F);
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        layoutParams.width = iconSize;
+        layoutParams.height = iconSize;
     }
 
     private ObjectAnimator createBgColorAnimator(Object object, String propertyName, int start, int end) {
