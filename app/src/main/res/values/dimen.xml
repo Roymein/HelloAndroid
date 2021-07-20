@@ -13,6 +13,10 @@
     <dimen name="pause_bar_distance">40dp</dimen>
     <dimen name="pause_bar_height">144dp</dimen>
 
-    <dimen name="icon_size">50dp</dimen>
-    <dimen name="icon_margin">10dp</dimen>
+    <dimen name="icon_size">12dp</dimen>
+    <dimen name="icon_group_height_size">18dp</dimen>
+    <dimen name="icon_margin">2dp</dimen>
+
+    <dimen name="pivot_x">2dp</dimen>
+    <dimen name="pivot_y">9dp</dimen>
 </resources>

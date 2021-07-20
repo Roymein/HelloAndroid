@@ -87,6 +87,7 @@
 
             <com.demo.android.view.PrivacyContainer
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>

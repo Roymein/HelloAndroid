@@ -43,16 +43,15 @@ public class PrivacyContainer extends FrameLayout {
 
     private PathInterpolator mPathInterpolator = new PathInterpolator(0F, 0f, 0.1f, 1f);
 
-
-    private Drawable catIcon = getResources().getDrawable(R.drawable.cat);
-
     private LinearLayout viewGroup;
 
     private int iconSize = getContext().getResources().getDimensionPixelSize(R.dimen.icon_size);
     private int iconMargin = getContext().getResources().getDimensionPixelOffset(R.dimen.icon_margin);
+    private int iconGroupHeight = getContext().getResources().getDimensionPixelSize(R.dimen.icon_group_height_size);
 
-    private ImageView mLikeIcon = new ImageView(getContext());
-    private ImageView mPlayIcon = new ImageView(getContext());
+    private ImageView microphoneIcon = new ImageView(getContext());
+    private ImageView cameraIcon = new ImageView(getContext());
+    private ImageView locationIcon = new ImageView(getContext());
 
     public PrivacyContainer(@NonNull Context context) {
         super(context);
@@ -69,11 +68,6 @@ public class PrivacyContainer extends FrameLayout {
         init();
     }
 
-    public PrivacyContainer(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init();
-    }
-
     private ShapeDrawable createBgDrawable(int color) {
         float radii = iconSize / 2F;
         float[] radiis = new float[]{radii, radii, radii, radii, radii, radii, radii, radii};
@@ -84,35 +78,39 @@ public class PrivacyContainer extends FrameLayout {
     }
 
     private void init() {
-        LayoutParams groupParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        groupParams.gravity = Gravity.CENTER;
+        LinearLayout.LayoutParams groupParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, iconGroupHeight);
+        groupParams.gravity = Gravity.CENTER_VERTICAL;
 
         viewGroup = new LinearLayout(getContext());
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT);
         viewGroup.setOrientation(HORIZONTAL);
         viewGroup.setBackground(createBgDrawable(bgColor));
         viewGroup.setClipChildren(false);
-        viewGroup.setLayoutParams(params);
         addView(viewGroup, groupParams);
 
-        mLikeIcon.setImageDrawable(getResources().getDrawable(R.drawable.icon_like, null));
-        mLikeIcon.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        mLikeIcon.setVisibility(View.VISIBLE);
+        microphoneIcon.setImageDrawable(getResources().getDrawable(R.drawable.privacy_microphone, null));
+        microphoneIcon.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        microphoneIcon.setVisibility(View.VISIBLE);
 
-        mPlayIcon.setImageDrawable(getResources().getDrawable(R.drawable.icon_play, null));
-        mPlayIcon.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        mPlayIcon.setVisibility(View.VISIBLE);
+        cameraIcon.setImageDrawable(getResources().getDrawable(R.drawable.privacy_camera, null));
+        cameraIcon.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        cameraIcon.setVisibility(View.VISIBLE);
+
+        locationIcon.setImageDrawable(getResources().getDrawable(R.drawable.privacy_location, null));
+        locationIcon.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        locationIcon.setVisibility(View.VISIBLE);
 
         LayoutParams layoutParams = new LayoutParams(iconSize, iconSize);
         layoutParams.setMargins(iconMargin, 0, iconMargin, 0);
-        viewGroup.addView(mLikeIcon, layoutParams);
-        viewGroup.addView(mPlayIcon, layoutParams);
+        layoutParams.gravity = Gravity.CENTER_VERTICAL;
+
+        viewGroup.addView(microphoneIcon, layoutParams);
+        viewGroup.addView(cameraIcon, layoutParams);
+        viewGroup.addView(locationIcon, layoutParams);
 
         viewGroup.setOnClickListener(v -> {
             List<Animator> animators = new ArrayList<>();
-            animators.add(createWidthObjAnimator(mLikeIcon, SCALE_X, iconSize / 2, 0, true));
-            animators.add(createHeightObjAnimator(mLikeIcon, SCALE_Y, iconSize / 2, 0, true));
+            animators.add(createWidthObjAnimator(locationIcon, SCALE_X, iconSize, 0, true));
+            animators.add(createHeightObjAnimator(locationIcon, SCALE_Y, iconSize, iconSize / 2, true));
             animators.add(createBgColorAnimator(viewGroup, COLOR, bgColor, locationColor));
 
             AnimatorSet animatorSet = new AnimatorSet();
@@ -125,10 +123,10 @@ public class PrivacyContainer extends FrameLayout {
 
                 @Override
                 public void onAnimationEnd(Animator animation) {
-                    mLikeIcon.setVisibility(GONE);
-                    resetViewStatus(mLikeIcon);
-                    Log.e(TAG, "onAnimationEnd: mLikeIcon.width: " + mLikeIcon.getLayoutParams().width + " height: " +
-                            mLikeIcon.getLayoutParams().height);
+                    locationIcon.setVisibility(GONE);
+                    resetViewStatus(microphoneIcon);
+                    Log.e(TAG, "onAnimationEnd: mLikeIcon.width: " + microphoneIcon.getLayoutParams().width + " height: " +
+                            microphoneIcon.getLayoutParams().height);
                 }
             });
             animatorSet.start();
@@ -167,7 +165,7 @@ public class PrivacyContainer extends FrameLayout {
 
         objectAnimator.setInterpolator(mPathInterpolator);
         if (setPivot) {
-            ((ImageView) object).setPivotX(0F);
+            ((ImageView) object).setPivotX(0);
         }
         objectAnimator.addUpdateListener(animation -> {
             int animatedValue = (int) animation.getAnimatedValue();
@@ -187,7 +185,7 @@ public class PrivacyContainer extends FrameLayout {
 
         objectAnimator.setInterpolator(mPathInterpolator);
         if (setPivot) {
-            ((ImageView) object).setPivotY(iconSize / 2f);
+            ((ImageView) object).setPivotY(iconSize / 2);
         }
         objectAnimator.addUpdateListener(animation -> {
             int animatedValue = (int) animation.getAnimatedValue();
