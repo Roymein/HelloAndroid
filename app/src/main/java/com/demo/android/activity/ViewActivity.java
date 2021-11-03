@@ -1,16 +1,22 @@
 package com.demo.android.activity;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -20,9 +26,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.demo.android.R;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class ViewActivity extends AppCompatActivity {
+    public static final String TAG = "ViewActivity";
+
     private ImageView mImageView;
     private ProgressBar mProgressBar;
+
+    private TextView mTextViewShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +48,7 @@ public class ViewActivity extends AppCompatActivity {
         if (actionBar != null && actionBar.isShowing()) {
             actionBar.hide();
         }
+        mTextViewShow = findViewById(R.id.tv_show);
     }
 
 
@@ -76,4 +90,26 @@ public class ViewActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    public void onClickStartAnim(View view) {
+        ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 400);
+        valueAnimator.setDuration(10000);
+        valueAnimator.addUpdateListener(animation -> {
+            int value = (int) animation.getAnimatedValue();
+            mTextViewShow.layout(value, value, value + mTextViewShow.getWidth(), value + mTextViewShow.getHeight());
+        });
+        valueAnimator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                Log.e(TAG, "onAnimationEnd: " );
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                Log.e(TAG, "onAnimationStart: " );
+            }
+        });
+        valueAnimator.start();
+    }
 }

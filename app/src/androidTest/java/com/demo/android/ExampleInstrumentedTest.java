@@ -1,6 +1,7 @@
 package com.demo.android;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -17,10 +18,13 @@ import static org.junit.Assert.*;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
+    public static final String TAG = "ExampleInstrumentedTest";
+
     @Test
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.demo.android", appContext.getPackageName());
+        Log.e(TAG, "useAppContext: " + appContext.getPackageName());
     }
 }

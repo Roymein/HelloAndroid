@@ -6,13 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.MenuActivity">
+    tools:context=".activity.CustomViewActivity">
 
-    <Button
-        android:id="@+id/btn_click_intent"
-        android:layout_width="match_parent"
+    <com.demo.android.view.CustomView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Intent test"
-        android:onClick="onClickIntent"/>
+        android:layout_gravity="center_horizontal"/>
+
 </LinearLayout>

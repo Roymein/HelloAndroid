@@ -43,4 +43,20 @@
         android:max="100"
         android:visibility="gone" />
 
+    <Button
+        android:id="@+id/btn_start_anim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickStartAnim"
+        android:text="start anim"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/tv_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text=" anim show"
+        android:background="#ffff00"
+        android:textAllCaps="false" />
 </LinearLayout>

@@ -23,6 +23,7 @@
             android:padding="10dp">
 
             <Button
+                android:id="@+id/btn_table_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
@@ -123,6 +124,20 @@
                 android:textAllCaps="false"
                 android:text="anim activity"
                 android:onClick="onClickAnim"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="custom view activity"
+                android:onClick="onClickJumpToCustomView"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="activity launch mode"
+                android:onClick="onClickActivityLaunchMode"/>
 
         </LinearLayout>
     </LinearLayout>

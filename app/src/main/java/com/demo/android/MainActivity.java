@@ -1,14 +1,16 @@
 package com.demo.android;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.demo.android.activity.AnimActivity;
+import com.demo.android.activity.CustomViewActivity;
 import com.demo.android.activity.DynamicReceiverActivity;
 import com.demo.android.activity.GridLayoutActivity;
+import com.demo.android.activity.LaunchModeActivity;
 import com.demo.android.activity.ListViewActivity;
 import com.demo.android.activity.MenuActivity;
 import com.demo.android.activity.RelativeLayoutActivity;
@@ -26,52 +28,60 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    private void startActivity(Class<?> clazz) {
+    private void jumpToActivity(Class<?> clazz) {
         Intent intent = new Intent(this, clazz);
         startActivity(intent);
     }
 
     public void onClickTableLayout(View view) {
-        startActivity(TableLayoutActivity.class);
+        jumpToActivity(TableLayoutActivity.class);
     }
 
     public void onClickEditManagedByTextInputLayout(View view) {
-        startActivity(TextInputLayoutActivity.class);
+        jumpToActivity(TextInputLayoutActivity.class);
     }
 
     public void onClickGridLayout(View view) {
-        startActivity(GridLayoutActivity.class);
+        jumpToActivity(GridLayoutActivity.class);
     }
 
     public void onClickRelativeLayout(View view) {
-        startActivity(RelativeLayoutActivity.class);
+        jumpToActivity(RelativeLayoutActivity.class);
     }
 
     public void onClickMenuActivity(View view) {
-        startActivity(MenuActivity.class);
+        jumpToActivity(MenuActivity.class);
     }
 
     public void onClickViewActivity(View view) {
-        startActivity(ViewActivity.class);
+        jumpToActivity(ViewActivity.class);
     }
 
     public void onClickListViewActivity(View view) {
-        startActivity(ListViewActivity.class);
+        jumpToActivity(ListViewActivity.class);
     }
 
     public void onClickLDynamicReceiver(View view) {
-        startActivity(DynamicReceiverActivity.class);
+        jumpToActivity(DynamicReceiverActivity.class);
     }
 
     public void onClickLAnim(View view) {
-        startActivity(ViewAnimActivity.class);
+        jumpToActivity(ViewAnimActivity.class);
     }
 
     public void onClick3D(View view) {
-        startActivity(ThressDActivity.class);
+        jumpToActivity(ThressDActivity.class);
     }
 
     public void onClickAnim(View view) {
-        startActivity(AnimActivity.class);
+        jumpToActivity(AnimActivity.class);
+    }
+
+    public void onClickJumpToCustomView(View view) {
+        jumpToActivity(CustomViewActivity.class);
+    }
+
+    public void onClickActivityLaunchMode(View view) {
+        jumpToActivity(LaunchModeActivity.class);
     }
 }
