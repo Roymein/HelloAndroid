@@ -6,18 +6,18 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.demo.android.activity.AnimActivity;
-import com.demo.android.activity.CustomViewActivity;
-import com.demo.android.activity.DynamicReceiverActivity;
-import com.demo.android.activity.GridLayoutActivity;
-import com.demo.android.activity.LaunchModeActivity;
-import com.demo.android.activity.ListViewActivity;
-import com.demo.android.activity.MenuActivity;
-import com.demo.android.activity.RelativeLayoutActivity;
-import com.demo.android.activity.TableLayoutActivity;
-import com.demo.android.activity.TextInputLayoutActivity;
-import com.demo.android.activity.ThressDActivity;
-import com.demo.android.activity.ViewActivity;
+import com.demo.android.customview.MusicPlayerActivity;
+import com.demo.android.customview.CustomViewActivity;
+import com.demo.android.broadcast.DynamicReceiverActivity;
+import com.demo.android.view.layoutview.GridLayoutActivity;
+import com.demo.android.activity.launchmode.LaunchModeActivity;
+import com.demo.android.view.ListViewActivity;
+import com.demo.android.view.MenuActivity;
+import com.demo.android.view.layoutview.RelativeLayoutActivity;
+import com.demo.android.view.layoutview.TableLayoutActivity;
+import com.demo.android.view.layoutview.TextInputLayoutActivity;
+import com.demo.android.customview.ThressDActivity;
+import com.demo.android.view.DialogActivity;
 import com.demo.android.anim.ViewAnimActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
     private void jumpToActivity(Class<?> clazz) {
         Intent intent = new Intent(this, clazz);
         startActivity(intent);
+    }
+
+    public void onClickJumpTest(View view) {
+        jumpToActivity(TestActivity.class);
     }
 
     public void onClickTableLayout(View view) {
@@ -54,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickViewActivity(View view) {
-        jumpToActivity(ViewActivity.class);
+        jumpToActivity(DialogActivity.class);
     }
 
     public void onClickListViewActivity(View view) {
@@ -73,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
         jumpToActivity(ThressDActivity.class);
     }
 
-    public void onClickAnim(View view) {
-        jumpToActivity(AnimActivity.class);
+    public void onClickPlayer(View view) {
+        jumpToActivity(MusicPlayerActivity.class);
     }
 
     public void onClickJumpToCustomView(View view) {

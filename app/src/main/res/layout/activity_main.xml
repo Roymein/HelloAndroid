@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,45 +9,59 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="16dp"
         android:paddingLeft="10dp"
+        android:paddingTop="16dp"
         android:paddingRight="10dp"
-        android:paddingTop="16dp">
+        android:paddingBottom="16dp">
+
+        <Button
+            android:id="@+id/btn_test_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickJumpTest"
+            android:text="Test Demo"
+            android:textAllCaps="false" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="布局"
+                android:textSize="@dimen/text_size" />
 
             <Button
                 android:id="@+id/btn_table_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
+                android:onClick="onClickTableLayout"
                 android:text="TableLayout 布局多个输入框"
-                android:onClick="onClickTableLayout"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
+                android:onClick="onClickEditManagedByTextInputLayout"
                 android:text="TextInputLayout管理输入框"
-                android:onClick="onClickEditManagedByTextInputLayout"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
+                android:onClick="onClickGridLayout"
                 android:text="GridLayout 创建计算器按键布局"
-                android:onClick="onClickGridLayout"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
+                android:onClick="onClickRelativeLayout"
                 android:text="RelativeLayout 布局"
-                android:onClick="onClickRelativeLayout"/>
+                android:textAllCaps="false" />
 
         </LinearLayout>
 
@@ -59,26 +71,32 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <Button
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="Menu activity"
-                android:onClick="onClickMenuActivity"/>
+                android:text="基本控件"
+                android:textSize="@dimen/text_size" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="View activity"
-                android:onClick="onClickViewActivity"/>
+                android:onClick="onClickMenuActivity"
+                android:text="菜单及Intent跳转"
+                android:textAllCaps="false" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="ListView activity"
-                android:onClick="onClickListViewActivity"/>
+                android:onClick="onClickViewActivity"
+                android:text="Dialog相关"
+                android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickListViewActivity"
+                android:text="ListView相关"
+                android:textAllCaps="false" />
 
         </LinearLayout>
 
@@ -88,22 +106,33 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <Button
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="Dynamic Receiver activity"
-                android:onClick="onClickLDynamicReceiver"/>
-
+                android:text="自定义控件"
+                android:textSize="@dimen/text_size" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="Anim activity"
-                android:onClick="onClickLAnim"/>
+                android:onClick="onClickPlayer"
+                android:text="播放器控件"
+                android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickJumpToCustomView"
+                android:text="画笔控件及动画"
+                android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick3D"
+                android:text="3d控件"
+                android:textAllCaps="false" />
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -111,34 +140,45 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <Button
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="3d activity"
-                android:onClick="onClick3D"/>
+                android:text="动画"
+                android:textSize="@dimen/text_size" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="anim activity"
-                android:onClick="onClickAnim"/>
+                android:onClick="onClickLAnim"
+                android:text="视图动画"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="四大组件"
+                android:textSize="@dimen/text_size" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="custom view activity"
-                android:onClick="onClickJumpToCustomView"/>
+                android:onClick="onClickLDynamicReceiver"
+                android:text="广播相关"
+                android:textAllCaps="false" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="activity launch mode"
-                android:onClick="onClickActivityLaunchMode"/>
-
+                android:onClick="onClickActivityLaunchMode"
+                android:text="activity启动模式"
+                android:textAllCaps="false" />
         </LinearLayout>
     </LinearLayout>
 

@@ -6,7 +6,7 @@
     android:id="@+id/gl_calculator"
     android:columnCount="4"
     android:rowCount="6"
-    tools:context=".activity.GridLayoutActivity">
+    tools:context=".view.layoutview.GridLayoutActivity">
 
     <!--        layout_columnSpan  表示占据4列-->
     <AutoCompleteTextView

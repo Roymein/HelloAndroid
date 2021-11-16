@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.ListViewActivity">
+    tools:context=".view.ListViewActivity">
 
     <com.demo.android.layout.TitleLayout
         android:layout_width="match_parent"

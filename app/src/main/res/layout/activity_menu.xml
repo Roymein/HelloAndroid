@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.MenuActivity">
+    tools:context=".view.MenuActivity">
 
     <Button
         android:id="@+id/btn_click_intent"

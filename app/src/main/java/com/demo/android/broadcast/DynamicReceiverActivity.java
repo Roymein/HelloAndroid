@@ -1,4 +1,4 @@
-package com.demo.android.activity;
+package com.demo.android.broadcast;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,35 +1,23 @@
-package com.demo.android.activity;
+package com.demo.android.view;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.demo.android.R;
 
-import java.util.HashSet;
-import java.util.Set;
-
-public class ViewActivity extends AppCompatActivity {
+public class DialogActivity extends AppCompatActivity {
     public static final String TAG = "ViewActivity";
 
     private ImageView mImageView;
@@ -40,7 +28,7 @@ public class ViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view);
+        setContentView(R.layout.activity_dialog);
         mImageView = findViewById(R.id.iv_test);
         mProgressBar = findViewById(R.id.pb_test);
 

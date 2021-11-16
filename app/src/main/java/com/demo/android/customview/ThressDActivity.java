@@ -1,4 +1,4 @@
-package com.demo.android.activity;
+package com.demo.android.customview;
 
 import android.os.Bundle;
 import android.widget.SeekBar;

@@ -1,4 +1,4 @@
-package com.demo.android.activity;
+package com.demo.android.view.layoutview;
 
 import android.os.Bundle;
 

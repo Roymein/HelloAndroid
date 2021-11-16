@@ -1,4 +1,4 @@
-package com.demo.android.activity;
+package com.demo.android.view;
 
 import android.content.Intent;
 import android.net.Uri;

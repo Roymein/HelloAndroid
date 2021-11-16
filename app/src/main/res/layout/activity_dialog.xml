@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.ViewActivity">
+    tools:context=".view.DialogActivity">
 
     <include layout="@layout/title_layout" />
 

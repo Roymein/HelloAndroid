@@ -1,4 +1,4 @@
-package com.demo.android.activity;
+package com.demo.android.customview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.demo.android.R;
-import com.demo.android.playerview.MusicPlayerView;
+import com.demo.android.view.playerview.MusicPlayerView;
 
-public class AnimActivity extends AppCompatActivity {
+public class MusicPlayerActivity extends AppCompatActivity {
 
     MusicPlayerView mpv;
 
